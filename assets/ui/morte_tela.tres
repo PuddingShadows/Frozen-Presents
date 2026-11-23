@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bbppf51acpvue"]
+
+[ext_resource type="FontFile" uid="uid://de871hna6e84d" path="res://assets/fonts/cc.yal.7w7.block.ttf" id="1_w0mqj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ait32"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_78koy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxjah"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_huqbf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jppak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dlu8m"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.9490196, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.4478191, 9.565987e-07, 2.4065375e-07, 1)
+Button/constants/outline_size = 8
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_w0mqj")
+Button/styles/disabled = SubResource("StyleBoxEmpty_ait32")
+Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_78koy")
+Button/styles/focus = SubResource("StyleBoxEmpty_xxjah")
+Button/styles/hover = SubResource("StyleBoxEmpty_huqbf")
+Button/styles/normal = SubResource("StyleBoxEmpty_jppak")
+Button/styles/pressed = SubResource("StyleBoxEmpty_dlu8m")

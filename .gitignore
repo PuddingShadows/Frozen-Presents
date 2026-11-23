@@ -1,0 +1,10 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Exportações do jogo
+/jogo/windows/Frozen Presents.exe
+/jogo/windows/Frozen Presents.console.exe
+/jogo/android/*.apk
+/jogo/web/Frozen Presents.wasm
+/jogo/web/web.zip

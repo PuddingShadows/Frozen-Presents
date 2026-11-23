@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://byn33aw5rtu6f"]
+
+[ext_resource type="Script" uid="uid://cx6ndcpldr3qt" path="res://scripts/menu_control.gd" id="1_dw83j"]
+[ext_resource type="FontFile" uid="uid://de871hna6e84d" path="res://assets/fonts/cc.yal.7w7.block.ttf" id="1_oin43"]
+[ext_resource type="Texture2D" uid="uid://nrkbqlt73057" path="res://assets/tilemap/christmasfree_20251218165644.png" id="2_hs3ag"]
+[ext_resource type="Theme" uid="uid://ctjkpcjvrdumj" path="res://assets/ui/menu.tres" id="2_svpbc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_svpbc"]
+font = ExtResource("1_oin43")
+font_size = 32
+font_color = Color(0, 1, 1, 1)
+outline_size = 8
+outline_color = Color(0, 0.45882353, 0.45882353, 1)
+
+[node name="menu_control" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dw83j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = 72.0
+offset_right = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="começar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_svpbc")
+text = "jogar"
+
+[node name="sair" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_svpbc")
+text = "sair"
+
+[node name="creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_svpbc")
+text = "creditos"
+
+[node name="button" type="Sprite2D" parent="VBoxContainer"]
+z_index = -1
+position = Vector2(75.5, 11.249998)
+scale = Vector2(2.3269231, 1.775862)
+texture = ExtResource("2_hs3ag")
+
+[node name="button2" type="Sprite2D" parent="VBoxContainer"]
+z_index = -1
+position = Vector2(72.5, 43.499992)
+scale = Vector2(1.7115384, 1.7586206)
+texture = ExtResource("2_hs3ag")
+
+[node name="button3" type="Sprite2D" parent="VBoxContainer"]
+z_index = -1
+position = Vector2(78, 76.5)
+scale = Vector2(3.0769231, 1.9655173)
+texture = ExtResource("2_hs3ag")
+
+[node name="título" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = 22.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FROZEN PRESENTS"
+label_settings = SubResource("LabelSettings_svpbc")
+
+[connection signal="pressed" from="VBoxContainer/começar" to="." method="_on_começar_pressed"]
+[connection signal="pressed" from="VBoxContainer/sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="VBoxContainer/creditos" to="." method="_on_creditos_pressed"]

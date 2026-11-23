@@ -1,0 +1,149 @@
+[gd_scene load_steps=11 format=3 uid="uid://b30kytsrw22b"]
+
+[ext_resource type="Texture2D" uid="uid://c6w5nwrr0sdcm" path="res://assets/ui/container_morte.png" id="1_ait32"]
+[ext_resource type="Script" uid="uid://bjxjpmn1x0lmo" path="res://scripts/morte_tela.gd" id="1_xxjah"]
+[ext_resource type="FontFile" uid="uid://de871hna6e84d" path="res://assets/fonts/cc.yal.7w7.block.ttf" id="2_78koy"]
+[ext_resource type="Texture2D" uid="uid://dknu0q85snnwy" path="res://assets/presentes/small_present2.png" id="3_xxjah"]
+[ext_resource type="Theme" uid="uid://bbppf51acpvue" path="res://assets/ui/morte_tela.tres" id="4_78koy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cae5a"]
+font = ExtResource("2_78koy")
+font_size = 32
+font_color = Color(1, 0, 0, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l7i8s"]
+font = ExtResource("2_78koy")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kxyy5"]
+font = ExtResource("2_78koy")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f7ym0"]
+font = ExtResource("2_78koy")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m7g0u"]
+font = ExtResource("2_78koy")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="morte_tela" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_xxjah")
+
+[node name="fundo" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="tela" type="Sprite2D" parent="."]
+position = Vector2(190, 107.75)
+scale = Vector2(2.5151515, 1.7834644)
+texture = ExtResource("1_ait32")
+
+[node name="game_over" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -68.0
+offset_right = 72.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_cae5a")
+
+[node name="tempo_sobrevivido" type="Label" parent="."]
+offset_left = 119.0
+offset_top = 72.0
+offset_right = 268.0
+offset_bottom = 95.0
+text = "tempo sobrevivido:"
+label_settings = SubResource("LabelSettings_l7i8s")
+
+[node name="tempo" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 90.0
+offset_right = 20.0
+offset_bottom = 113.0
+grow_horizontal = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_kxyy5")
+
+[node name="presentes_pego" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 2.0
+offset_right = 60.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "presentes pego:"
+label_settings = SubResource("LabelSettings_f7ym0")
+
+[node name="presente" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 28.0
+offset_right = 31.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x00"
+label_settings = SubResource("LabelSettings_m7g0u")
+
+[node name="present" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 7.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xxjah")
+flip_h = true
+
+[node name="menu" type="Button" parent="."]
+offset_left = 220.0
+offset_top = 167.0
+offset_right = 284.0
+offset_bottom = 181.0
+theme = ExtResource("4_78koy")
+text = "MENU"
+
+[node name="recomeçar" type="Button" parent="."]
+offset_left = 77.0
+offset_top = 167.0
+offset_right = 221.0
+offset_bottom = 181.0
+theme = ExtResource("4_78koy")
+text = "TENTAR"
+
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="recomeçar" to="." method="_on_recomeçar_pressed"]

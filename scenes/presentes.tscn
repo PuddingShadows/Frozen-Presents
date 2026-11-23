@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://chppptfclyohp"]
+
+[ext_resource type="Texture2D" uid="uid://cv88g03ke8p2" path="res://assets/presentes/small_present1.png" id="1_b4rpd"]
+[ext_resource type="Script" uid="uid://cjx8btluumyj4" path="res://scripts/small_presents.gd" id="1_edhg2"]
+[ext_resource type="Texture2D" uid="uid://dknu0q85snnwy" path="res://assets/presentes/small_present2.png" id="2_ar5lv"]
+[ext_resource type="Script" uid="uid://bxunycma4aedg" path="res://scripts/big_presents.gd" id="4_qx26y"]
+[ext_resource type="Texture2D" uid="uid://blcssjtk6vht1" path="res://assets/presentes/big_present1.png" id="5_q01uj"]
+[ext_resource type="Texture2D" uid="uid://clsli0w117di2" path="res://assets/presentes/big_present2.png" id="6_q01uj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edhg2"]
+size = Vector2(24, 27)
+
+[node name="presentes" type="Node2D"]
+
+[node name="small_presents" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_edhg2")
+present_texture = Array[Texture2D]([ExtResource("2_ar5lv"), ExtResource("1_b4rpd")])
+
+[node name="collision" type="CollisionShape2D" parent="small_presents"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_edhg2")
+
+[node name="presente" type="Sprite2D" parent="small_presents"]
+texture = ExtResource("1_b4rpd")
+
+[node name="big_presents" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_qx26y")
+present_texture = Array[Texture2D]([ExtResource("5_q01uj"), ExtResource("6_q01uj")])
+
+[node name="collision" type="CollisionShape2D" parent="big_presents"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_edhg2")
+
+[node name="presente" type="Sprite2D" parent="big_presents"]
+texture = ExtResource("5_q01uj")
+
+[connection signal="body_entered" from="small_presents" to="small_presents" method="_on_body_entered"]
+[connection signal="body_entered" from="big_presents" to="big_presents" method="_on_body_entered"]

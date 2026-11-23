@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://g7d3xmqfi23v"]
+
+[ext_resource type="Script" uid="uid://dv5xw7urbnbdv" path="res://scripts/creditos.gd" id="1_lgbdq"]
+[ext_resource type="FontFile" uid="uid://de871hna6e84d" path="res://assets/fonts/cc.yal.7w7.block.ttf" id="1_spoww"]
+[ext_resource type="Texture2D" uid="uid://nrkbqlt73057" path="res://assets/tilemap/christmasfree_20251218165644.png" id="2_jddgq"]
+[ext_resource type="Theme" uid="uid://ctjkpcjvrdumj" path="res://assets/ui/menu.tres" id="3_lgbdq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qn435"]
+font = ExtResource("1_spoww")
+font_size = 64
+outline_size = 22
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_spoww"]
+font = ExtResource("1_spoww")
+font_size = 48
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6yhot"]
+font = ExtResource("1_spoww")
+font_size = 24
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jddgq"]
+font = ExtResource("1_spoww")
+font_size = 22
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="creditos" type="Control" unique_id=851453046]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lgbdq")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1524053295]
+custom_minimum_size = Vector2(384, 216)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=816147579]
+custom_minimum_size = Vector2(384, 410)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="creditos" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1246627429]
+layout_mode = 2
+text = "creditos:"
+label_settings = SubResource("LabelSettings_qn435")
+horizontal_alignment = 1
+
+[node name="criador" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=896581660]
+layout_mode = 2
+text = "jogo por:"
+label_settings = SubResource("LabelSettings_spoww")
+horizontal_alignment = 1
+
+[node name="Guylherme" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=699017662]
+layout_mode = 2
+text = "Guylherme Yoshimura Paiva "
+label_settings = SubResource("LabelSettings_6yhot")
+horizontal_alignment = 1
+
+[node name="apoio" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1381351658]
+layout_mode = 2
+text = "Apoio:"
+label_settings = SubResource("LabelSettings_spoww")
+horizontal_alignment = 1
+
+[node name="lua" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=339307486]
+layout_mode = 2
+text = "Lua Costa Oliveira "
+label_settings = SubResource("LabelSettings_6yhot")
+horizontal_alignment = 1
+
+[node name="testador" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1915391593]
+layout_mode = 2
+text = "testes no Pc:"
+label_settings = SubResource("LabelSettings_spoww")
+horizontal_alignment = 1
+
+[node name="samuel" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=848548559]
+layout_mode = 2
+text = "samuel Victor de Oliveira Veloso"
+label_settings = SubResource("LabelSettings_jddgq")
+horizontal_alignment = 1
+
+[node name="musica" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1571931411]
+layout_mode = 2
+text = "música:"
+label_settings = SubResource("LabelSettings_spoww")
+horizontal_alignment = 1
+
+[node name="music" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1058603680]
+layout_mode = 2
+text = "\"Jolly Festive Chiptune\"
+by Shane Ivers (Silverman Sound)
+Licensed under CC BY 4.0"
+label_settings = SubResource("LabelSettings_jddgq")
+horizontal_alignment = 1
+
+[node name="button" type="Sprite2D" parent="ScrollContainer/VBoxContainer" unique_id=1344234165]
+position = Vector2(195, 388)
+scale = Vector2(2.346154, 1.551724)
+texture = ExtResource("2_jddgq")
+
+[node name="voltar" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1702748328]
+layout_mode = 2
+theme = ExtResource("3_lgbdq")
+text = "voltar"
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/voltar" to="." method="_on_voltar_pressed"]
